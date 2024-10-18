@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "Sixtyfour Convergence";
+    src: url('@/assets/css/fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf') format('truetype');
+    font-weight: 100 900; /* Specify the supported range */
+    font-style: normal;
+}
+
+
+
+
+.sixtyfour-convergence-scan {
+    font-family: "Sixtyfour Convergence", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 23,
+      "SCAN" 65,
+      "XELA" -100,
+      "YELA" 100;
+  }
+
+
+
+body div{
+    font-size: 80px !important;
+}

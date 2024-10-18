@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'Sixtyfour Convergence';
+    src: url('/misc/fonts/SixtyfourConvergence-Regular.ttf');
+    font-wight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Sixtyfour Convergence new';
+    src: url('/misc/fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf');
+    font-wight: 400;
+    font-style: normal;
+}
