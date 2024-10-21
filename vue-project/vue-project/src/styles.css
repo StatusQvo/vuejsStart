@@ -1,0 +1,33 @@
+@font-face{
+    font-family: 'Sixtyfour Convergence';
+    src: url('./assets/fonts/SixtyfourConvergence-Regular-VariableFont_BLED,SCAN,XELA,YELA.ttf');
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 17,
+      "SCAN" 91,
+      "XELA" -64,
+      "YELA" 64;
+}
+
+.sixtyfour-convergence-custom {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 17,
+      "SCAN" -41,
+      "XELA" -64,
+      "YELA" 64;
+}
+
+body {
+    font-family: 'Sixtyfour Convergence', sans-serif; /* Пример шрифта */
+    background-color: #f0f0f0;
+}
+
+#app {
+    padding: 20px;
+}
