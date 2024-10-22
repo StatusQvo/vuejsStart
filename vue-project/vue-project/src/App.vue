@@ -1,5 +1,5 @@
 <template>
-  <div class="sixtyfour-convergence-custom">
+<div class="sixtyfour-convergence-custom">
     <h1>{{ message }}</h1>
     <p>This is a sample text using the custom font.</p>
   </div>

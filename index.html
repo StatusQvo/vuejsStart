@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vue-project/vue-project/src/styles.css">
+    <link rel="stylesheet" href="styles-spec.css">
+    <script src="https://unpkg.com/vue@2"></script>
     <title>Vue JS Tutorial</title>
 </head>
 
 <body>
-    <div id="app">
-        <h1>{{ message }}</h1>
+    <div id="vue-app">
+        <h1 :class="classObject">{{ name }} and {{ something }}</h1>
+
+        <div class="btn-div">
+            <button :class="{ 'toggle-class-1' : isPushedBtn1}" @click="toggleClasses">Push me</button>
+        </div>
     </div>
 
-    <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="app.js"></script>
+    <script src="newApp.js"></script>
 </body>
 
 </html>

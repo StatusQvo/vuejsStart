@@ -1,0 +1,31 @@
+
+.btn-div {
+    text-align: center;
+}
+.btn-div button {
+    padding: 10px 42px;
+    font-size: 26px;
+    border: none;
+    background: linear-gradient(94deg, #ffa200 80%, #ffdd0e 87%, #ffa200 90%);
+    border-radius: 8px;
+}
+
+.superClass {
+    font-family: "Sixtyfour Convergence", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 90,
+      "SCAN" 90,
+      "XELA" 64,
+      "YELA" -64;
+    transition: all 2.4s ease-out;
+}
+
+.btn-div button.toggle-class-1 {
+    background: linear-gradient(94deg, #ffa200 5%, #ffdd0e 12%, #ffa200 20%);
+}
+/* .boldClass {
+    font-family: 'LondrinaScetch';
+} */

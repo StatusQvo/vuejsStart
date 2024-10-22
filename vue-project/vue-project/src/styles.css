@@ -5,10 +5,17 @@
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
-      "BLED" 17,
-      "SCAN" 91,
+      "BLED" 77,
+      "SCAN" -91,
       "XELA" -64,
       "YELA" 64;
+}
+
+@font-face{
+    font-family: 'LondrinaScetch';
+    src: url('./assets/fonts/LondrinaSketch-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
 }
 
 .sixtyfour-convergence-custom {
@@ -17,10 +24,10 @@
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
-      "BLED" 17,
-      "SCAN" -41,
+      "BLED" 1,
+      "SCAN" 1,
       "XELA" -64,
-      "YELA" 64;
+      "YELA" 24;
 }
 
 body {
