@@ -1,27 +1,46 @@
 new Vue({
-    el: "#vue-app",
-    data() {
+    el:'#vue-app',
+    data(){
         return {
-            name: 'Shaunbbb',
-            something: 'this is a test for BEAUTIFUL FONT 123456789',
-            isActive: false, // Для первого класса
-            isBold: false, // Для второго класса
+            name: 'DD',
+            something: 'this is sub-header special note',
+            repositoryName: 'My Repository',
+            repositoryURL: 'https://github.com/StatusQvo/vuejsStart',
+            isActive: false,
+            isBold: false,
             isPushedBtn1: false,
-        };
+            isBayMaxXs: true,
+            isBayMaxXl: false,
+
+        }
     },
     computed: {
-        classObject() {
+        classObject(){
+            return{
+                superClass: this.isActive,
+                boldClass: this.isBold
+            }
+        },
+        BaymaxSize(){
             return {
-                'superClass': this.isActive, // Добавляет класс superClass, если isActive true
-                'boldClass': this.isBold, // Добавляет класс boldClass, если isBold true
-            };
+                Baymax_xs: this.isBayMaxXs,
+                Baymax_xl: this.isBayMaxXl
+            }
         }
     },
     methods: {
-        toggleClasses() {
-            this.isActive = !this.isActive; // Переключаем класс superClass
-            this.isBold = !this.isBold; // Переключаем класс boldClass
+        toggleClasses(){
+            this.isActive = !this.isActive;
+            this.isBold = !this.isBold;
             this.isPushedBtn1 = !this.isPushedBtn1;
+            this.isBayMaxXs = !this.isBayMaxXs;
+            this.isBayMaxXl = !this.isBayMaxXl;
+        },
+        greeting: function(daytime){
+            return `Good ${daytime} ${this.name} and Hello world`;
+        },
+        URLTag(){
+            return `<a href="${this.repositoryURL}">${this.repositoryName} by Tag</a>`;
         }
     }
 });

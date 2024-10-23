@@ -12,11 +12,15 @@
 
 <body>
     <div id="vue-app">
-        <h1 :class="classObject">{{ name }} and {{ something }}</h1>
-
+        <h1 :class="classObject">{{ name }}</h1>
+        <h1 :class="classObject">{{ something }}</h1>
+        <p> {{ greeting('AFTERNOON') }}</p>
         <div class="btn-div">
             <button :class="{ 'toggle-class-1' : isPushedBtn1}" @click="toggleClasses">Push me</button>
         </div>
+        <textarea value="name"></textarea>
+        <p v-bind:class="BaymaxSize"><a v-bind:href="repositoryURL">{{ repositoryName }}</a></p>
+        <p v-bind:class="BaymaxSize" v-html="URLTag()"></p>
     </div>
 
     <script src="newApp.js"></script>
