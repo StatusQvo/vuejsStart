@@ -25,11 +25,14 @@
         <div id="spec-btns">
             <h1>{{ less5Events }} </h1>
             <h3> {{ test() }}</h3>
-            <button v-on:click="myAgeAdd(1)">Add 1 Year</button>
+            <button v-on:click.once="myAgeAdd(1)">Add 1 Year</button>
             <button v-on:click="myAgeRm(1)">Remove 1 Year</button>
             <button v-on:dblclick="myAgeAdd(10)">Add 10 Years</button>
             <button v-on:dblclick="myAgeRm(10)">Remove 10 Years</button>
             <p>my Age is {{ myAge }}</p>
+            <p>
+                <a v-bind:href="repositoryURL" v-on:click.prevent="click">Link "You clicked me!"</a>
+            </p>
         </div>
         <div id="canvas" v-on:mousemove="updateXY">{{ X }} , {{ Y }}</div>
     </div>
