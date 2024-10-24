@@ -27,3 +27,21 @@
     background: linear-gradient(94deg, #ffa200 5%, #ffdd0e 12%, #ffa200 20%);
 }
 
+
+#spec-btns {
+    font-family: cursive;
+    font-size: 30px;
+}
+#spec-btns button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: beige;
+    border-radius: 12px;
+}
+
+#canvas{
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid #333;
+}
