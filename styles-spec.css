@@ -38,10 +38,25 @@
     background-color: beige;
     border-radius: 12px;
 }
-
+#spec-btns h1 {
+    color: orange;
+}
 #canvas{
     width: 600px;
     padding: 200px 20px;
     text-align: center;
     border: 1px solid #333;
+}
+.red{
+    color: red;
+}
+.blue{
+    color: blue;
+}
+.available {
+    background: linear-gradient(to right, blue, red); /* Задание градиента */
+    -webkit-background-clip: text; /* Обрезка фона по тексту для WebKit-браузеров */
+    background-clip: text; /* Обрезка фона по тексту */
+    color: transparent; /* Прозрачный текст для видимости фона */
+    width: 75px;
 }

@@ -13,23 +13,27 @@
 <body>
     <div id="vue-app">
         <h1 :class="classObject">{{ name }}</h1>
-        <h1 :class="classObject">{{ something }}</h1>
         <p> {{ greeting('AFTERNOON') }}</p>
         <div class="btn-div">
             <button :class="{ 'toggle-class-1' : isPushedBtn1}" @click="toggleClasses">Push me</button>
         </div>
-        <textarea v-bind:value="name"></textarea>
         <p v-bind:class="BaymaxSize"><a v-bind:href="repositoryURL">{{ repositoryName }}</a></p>
         <p v-bind:class="BaymaxSize" v-html="URLTag()"></p>
 
+        <label>Name:</label>
+        <input type="text" v-bind:value="name" v-model="inputName">
+        <span>{{ inputName }}</span>
+        <label>Age:</label>
+        <input type="text" v-bind:value="myAge" v-model="inputAge">
+        <span>{{ inputAge }}</span>
         <div id="spec-btns">
-            <h1>{{ less5Events }} </h1>
-            <h3> {{ test() }}</h3>
-            <button v-on:click.once="myAgeAdd(1)">Add 1 Year</button>
-            <button v-on:click="myAgeRm(1)">Remove 1 Year</button>
-            <button v-on:dblclick="myAgeAdd(10)">Add 10 Years</button>
-            <button v-on:dblclick="myAgeRm(10)">Remove 10 Years</button>
-            <p>my Age is {{ myAge }}</p>
+            <h1 :class="BaymaxSize">{{ less8Events }} </h1>
+            <button v-on:click="a++">Add to A</button>
+            <button v-on:click="b++">Add to B</button>
+            <p v-bind:class="{red:true}">A - {{ a }}</p>
+            <p v-on:click="available = !available" v-bind:class="{available:available}">B - {{ b }}</p>
+            <p>Age + A = {{ addToA }}</p>
+            <p>Age + B = {{ addToB }}</p>
             <p>
                 <a v-bind:href="repositoryURL" v-on:click.prevent="click">Link "You clicked me!"</a>
             </p>

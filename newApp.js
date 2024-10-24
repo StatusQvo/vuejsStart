@@ -11,10 +11,15 @@ new Vue({
             isPushedBtn1: false,
             isBayMaxXs: true,
             isBayMaxXl: false,
-            less5Events: "Events",
+            less8Events: "Computed Properties",
             myAge: 36,
             X: 0,
             Y: 0,
+            inputName: '',
+            inputAge: '',
+            a: 0,
+            b: 0,
+            available: true,
         }
     },
     computed: {
@@ -29,7 +34,16 @@ new Vue({
                 Baymax_xs: this.isBayMaxXs,
                 Baymax_xl: this.isBayMaxXl
             }
+        },
+        addToA() {
+            console.log('addToA');
+            return this.a + this.myAge;
+        },
+        addToB() {
+            console.log('addToB');
+            return this.b + this.myAge;
         }
+
     },
     methods: {
         toggleClasses() {
@@ -60,6 +74,12 @@ new Vue({
         },
         click: function() {
             alert('You clicked me!');
+        },
+        LogName: function() {
+            console.log('The name was intered');
+        },
+        LogAge: function() {
+            console.log('The age was intered');
         }
     }
 });
