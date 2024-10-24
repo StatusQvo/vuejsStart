@@ -12,29 +12,30 @@
 
 <body>
     <div id="vue-app">
-        <h1 :class="classObject">{{ name }}</h1>
-        <h1 :class="classObject">{{ something }}</h1>
-        <p> {{ greeting('AFTERNOON') }}</p>
-        <div class="btn-div">
-            <button :class="{ 'toggle-class-1' : isPushedBtn1}" @click="toggleClasses">Push me</button>
-        </div>
-        <textarea v-bind:value="name"></textarea>
-        <p v-bind:class="BaymaxSize"><a v-bind:href="repositoryURL">{{ repositoryName }}</a></p>
-        <p v-bind:class="BaymaxSize" v-html="URLTag()"></p>
 
-        <div id="spec-btns">
-            <h1>{{ less5Events }} </h1>
-            <h3> {{ test() }}</h3>
-            <button v-on:click.once="myAgeAdd(1)">Add 1 Year</button>
-            <button v-on:click="myAgeRm(1)">Remove 1 Year</button>
-            <button v-on:dblclick="myAgeAdd(10)">Add 10 Years</button>
-            <button v-on:dblclick="myAgeRm(10)">Remove 10 Years</button>
-            <p>my Age is {{ myAge }}</p>
-            <p>
-                <a v-bind:href="repositoryURL" v-on:click.prevent="click">Link "You clicked me!"</a>
-            </p>
+        <!-- img bag -->
+        <div class="main-container">
+            <div id="bag" v-bind:class="{burst:ended}"></div>
+            <div class="game-settings">
+                <label for="hit-strength">Hit Strength</label>
+                <input type="number" id="hit-strength" v-model:value="hitStrength" />
+
+            </div>
         </div>
-        <div id="canvas" v-on:mousemove="updateXY">{{ X }} , {{ Y }}</div>
+
+        <!-- health -->
+        <div id="bag-health">
+            <div></div>
+            <div id="health-less" v-bind:style="{ width: (100 - health) + '%' }"></div>
+        </div>
+
+        <!-- Controls -->
+        <div id="controls" v-bind:class="{onRestart:isRestart}">
+            <button v-on:click="punch(hitStrength)" v-show="!ended">Punch</button>
+            <button v-on:click="restart">Res</button>
+        </div>
+
+
     </div>
 
     <script src="newApp.js"></script>

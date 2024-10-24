@@ -1,47 +1,94 @@
-
-.btn-div {
-    text-align: center;
-}
-.btn-div button {
-    padding: 10px 42px;
-    font-size: 26px;
-    border: none;
-    background: linear-gradient(94deg, #ffa200 80%, #ffdd0e 87%, #ffa200 90%);
-    border-radius: 8px;
+#bag{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    background: url('/vue-project/vue-project/src/assets/img/bag.png') center no-repeat;
+    background-size: 80%;
 }
 
-.superClass {
-    font-family: "Sixtyfour Convergence", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "BLED" 90,
-      "SCAN" 90,
-      "XELA" 64,
-      "YELA" -64;
-    transition: all 2.4s ease-out;
+#bag.burst{
+    background-image: url('/vue-project/vue-project/src/assets/img/bag-burst.png');
 }
 
-.btn-div button.toggle-class-1 {
-    background: linear-gradient(94deg, #ffa200 5%, #ffdd0e 12%, #ffa200 20%);
+#bag-health{
+    position: relative;
+    width: 200px;
+    border: 2px solid #000;
+    margin: 0 auto 20px auto;
 }
 
-
-#spec-btns {
-    font-family: cursive;
-    font-size: 30px;
+#bag-health div{
+    height: 20px;
+    background: linear-gradient(to right, crimson, yellow, green);
 }
-#spec-btns button {
+
+#bag-health #health-less {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: -1px;
+    height: 100%;
+    width: 0px;
+    background: none;
+    background-color: black;
+}
+
+#controls{
+    width: 170px;
+    margin: 0 auto;
+}
+#controls button {
     padding: 10px 20px;
-    font-size: 20px;
-    background-color: beige;
-    border-radius: 12px;
+}
+#controls.onRestart {
+    text-align: center;
+}
+.main-container {
+    position: relative;
+}
+.game-settings {
+    --persent-xs: 10%;
+    position: absolute;
+    top: 20%;
+    right: var(--persent-xs);
+    padding: 22px;
+    max-width: 200px;
+    width: 100%;
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: dotted;
+    border-color: darkseagreen;
+    @media(max-width: 960px){
+        right: calc(80% - var(--persent-xs));
+        font-family: Arial;
+        max-width: 100px;
+    }
+    @media(max-width: 600px){
+        right: calc(76% - var(--persent-xs));
+    }
+    @media(max-width: 500px){
+        position: static;
+        margin: auto;
+        margin-bottom: 20px;
+        padding: 10px;
+        max-width: 175px;
+        width: auto;
+    }
+}
+.game-settings label {
+    display: block;
+    margin-bottom: 15px;
+    @media(max-width: 500px){
+        display: inline-block;
+        padding-right: 15px;
+        margin-bottom: 0;
+    }
 }
 
-#canvas{
-    width: 600px;
-    padding: 200px 20px;
-    text-align: center;
-    border: 1px solid #333;
+.game-settings input {
+    width: 100%;
+    box-sizing: border-box;
+    @media(max-width: 500px){
+        max-width: 50px;
+    }
 }
