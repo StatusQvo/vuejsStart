@@ -31,7 +31,7 @@
             <button v-on:click="a++">Add to A</button>
             <button v-on:click="b++">Add to B</button>
             <p v-bind:class="{red:true}">A - {{ a }}</p>
-            <p v-on:click="available = !available" v-bind:class="{available:available}">B - {{ b }}</p>
+            <p v-on:click="available = !available" v-bind:class="{available:available, blue:!available}">B - {{ b }}</p>
             <p>Age + A = {{ addToA }}</p>
             <p>Age + B = {{ addToB }}</p>
             <p>
@@ -39,6 +39,30 @@
             </p>
         </div>
         <div id="canvas" v-on:mousemove="updateXY">{{ X }} , {{ Y }}</div>
+
+        <div id="L9-item">
+            <h3>This is Lesson 11 chapter</h3>
+            <button v-on:click="initScs=!initScs">Init Success</button>
+            <button v-on:click="initErr=!initErr">Init Error</button>
+            <p v-show="initErr">There will be error</p>
+            <p v-show="initScs">SCP: There will be dragons!</p>
+        </div>
+
+        <h3>Lesson 12</h3>
+        <ul>
+            <li v-for="(char,indx) in characters">{{ indx+1 }} . {{ char }}</li>
+        </ul>
+        <!-- <div v-for="(ninja, i) in ninjas">
+            <h3>{{ i }} - {{ ninja.name }}</h3>
+            <p>Age - {{ ninja.age }}</p>
+        </div> -->
+        <template v-for="(ninja, i) in ninjas">
+            <h2>{{ i+1 }}</h2>
+            <div v-for="(val,key) in ninja">
+                
+                <h3>{{ key }} - {{ val }}</h3>
+            </div>
+        </template>
     </div>
 
     <script src="newApp.js"></script>

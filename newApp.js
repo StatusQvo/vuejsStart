@@ -20,6 +20,15 @@ new Vue({
             a: 0,
             b: 0,
             available: true,
+            blue: false,
+            initScs: false,
+            initErr: false,
+            characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
+            ninjas: [
+                { name: 'Ryu', age: 25 },
+                { name: 'Yoshi', age: 35 },
+                { name: 'Ken', age: 55 }
+            ]
         }
     },
     computed: {
@@ -42,8 +51,7 @@ new Vue({
         addToB() {
             console.log('addToB');
             return this.b + this.myAge;
-        }
-
+        },
     },
     methods: {
         toggleClasses() {

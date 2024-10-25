@@ -54,9 +54,29 @@
     color: blue;
 }
 .available {
+    display: flex;
     background: linear-gradient(to right, blue, red); /* Задание градиента */
     -webkit-background-clip: text; /* Обрезка фона по тексту для WebKit-браузеров */
     background-clip: text; /* Обрезка фона по тексту */
     color: transparent; /* Прозрачный текст для видимости фона */
-    width: 75px;
+    width: fit-content;
+}
+
+/* Usual buttons */
+#L9-item {
+    margin-bottom: 50px;
+}
+#L9-item button {
+    padding: 10px 20px;
+    font-family:'Baymax';
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(to right, #000051, #606101);
+    border-radius: 12px;
+}
+#L9-item p {
+    font-family:'Baymax';
+    font-size: 1.5em;
+    font-color: red;
+    stroke: 1px solid black;
 }
