@@ -11,60 +11,23 @@
 </head>
 
 <body>
-    <div id="vue-app">
-        <h1 :class="classObject">{{ name }}</h1>
-        <p> {{ greeting('AFTERNOON') }}</p>
-        <div class="btn-div">
-            <button :class="{ 'toggle-class-1' : isPushedBtn1}" @click="toggleClasses">Push me</button>
-        </div>
-        <p v-bind:class="BaymaxSize"><a v-bind:href="repositoryURL">{{ repositoryName }}</a></p>
-        <p v-bind:class="BaymaxSize" v-html="URLTag()"></p>
-
-        <label>Name:</label>
-        <input type="text" v-bind:value="name" v-model="inputName">
-        <span>{{ inputName }}</span>
-        <label>Age:</label>
-        <input type="text" v-bind:value="myAge" v-model="inputAge">
-        <span>{{ inputAge }}</span>
-        <div id="spec-btns">
-            <h1 :class="BaymaxSize">{{ less8Events }} </h1>
-            <button v-on:click="a++">Add to A</button>
-            <button v-on:click="b++">Add to B</button>
-            <p v-bind:class="{red:true}">A - {{ a }}</p>
-            <p v-on:click="available = !available" v-bind:class="{available:available, blue:!available}">B - {{ b }}</p>
-            <p>Age + A = {{ addToA }}</p>
-            <p>Age + B = {{ addToB }}</p>
-            <p>
-                <a v-bind:href="repositoryURL" v-on:click.prevent="click">Link "You clicked me!"</a>
-            </p>
-        </div>
-        <div id="canvas" v-on:mousemove="updateXY">{{ X }} , {{ Y }}</div>
-
-        <div id="L9-item">
-            <h3>This is Lesson 11 chapter</h3>
-            <button v-on:click="initScs=!initScs">Init Success</button>
-            <button v-on:click="initErr=!initErr">Init Error</button>
-            <p v-show="initErr">There will be error</p>
-            <p v-show="initScs">SCP: There will be dragons!</p>
-        </div>
-
-        <h3>Lesson 12</h3>
-        <ul>
-            <li v-for="(char,indx) in characters">{{ indx+1 }} . {{ char }}</li>
-        </ul>
-        <!-- <div v-for="(ninja, i) in ninjas">
-            <h3>{{ i }} - {{ ninja.name }}</h3>
-            <p>Age - {{ ninja.age }}</p>
-        </div> -->
-        <template v-for="(ninja, i) in ninjas">
-            <h2>{{ i+1 }}</h2>
-            <div v-for="(val,key) in ninja">
-                
-                <h3>{{ key }} - {{ val }}</h3>
-            </div>
-        </template>
+    <div id="vue-app-one">
+        <h3>{{oneTitle}}</h3>
+        <template v-html="thisIsHTML"></template>
     </div>
 
+    <div id="vue-app-two">
+        <h3>{{ name }}</h3>
+        <button v-on:click="toggleTrigger">Change first name</button>
+
+        <comp1></comp1>
+    </div>
+
+
+    <div id="vue-app-two">
+        <h3>{{twoTitle}}</h3>
+        <button v-on:click="changeTitle">Change first Title</button>
+    </div>
     <script src="newApp.js"></script>
 </body>
 
