@@ -53,7 +53,30 @@
   font-weight: 400;
   font-style:normal;
 }
-
+@font-face{
+  font-family: 'KalniaGlaze Regular';
+  src: url('./assets/fonts/KalniaGlaze_Expanded-Regular.ttf');
+  font-weight: 400;
+  font-style:normal;
+}
+@font-face{
+  font-family: 'BigShoulder';
+  src: url('./assets/fonts/BigShouldersStencilDisplay-Regular.ttf');
+  font-weight: 400;
+  font-style:normal;
+}
+@font-face{
+  font-family: 'ReggaeOne';
+  src: url('./assets/fonts/ReggaeOne-Regular.ttf');
+  font-weight: 400;
+  font-style:normal;
+}
+@font-face{
+  font-family: 'Tangerine';
+  src: url('./assets/fonts/Tangerine-Bold.ttf');
+  font-weight: 400;
+  font-style:normal;
+}
 .Baymax_xs,
 .Baymax_xl {
   font-family: 'BayMax';

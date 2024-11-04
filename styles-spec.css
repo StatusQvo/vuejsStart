@@ -1,4 +1,6 @@
 
-body {
-    font-family: 'Julee-Regular'
+body,
+input {
+    font-family: 'KalniaGlaze Regular1', 'Astloch-Regular1','BigShoulder1', 'ReggaeOne1','Tangerine';
+    font-size: 30px;
 }
