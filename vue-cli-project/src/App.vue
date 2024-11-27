@@ -1,5 +1,5 @@
 <template>
-<div id='app'>
+<div>
     <div>
       <h1>{{ title }}</h1>
       <p>{{ greeting() }}</p>
