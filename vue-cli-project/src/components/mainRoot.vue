@@ -13,8 +13,8 @@
     export default {
         props:{
             appUsers: {
-                type: Array
-                }
+                type: Array,
+                required: true
             }
         },
         data(){
