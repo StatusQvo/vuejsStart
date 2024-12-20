@@ -6,19 +6,27 @@
 
 
 <script>
+import { bus } from '../main';
 
 export default{
     props: {
         title:{
-            type: String
+            type: String,
         }
     },
     data(){
         return{
-            copyright: "Copyright 2017 "
+            copyright: "Copyright 2017 ",
+            title: 'Vue Project'
         }
+    },
+    created(){
+        bus.$on('newTitle',(data)=>{
+            this.title = data;
+        })
+
     }
-}
+ }
 
 </script>
 

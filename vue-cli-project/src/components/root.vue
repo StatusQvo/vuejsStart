@@ -12,11 +12,8 @@
 
 <script>
 export default{
-    props: {
-        appUsers: {
-            type: Array,
-            required: true,
-        }
+    props:{
+      appUsers:[]
     },
     data(){
         return {}
@@ -26,6 +23,7 @@ export default{
             this.appUsers.pop();
         }
     }
+
 }
 
 </script>

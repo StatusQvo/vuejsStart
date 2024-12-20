@@ -3,21 +3,25 @@
 </template>
 
 <script>
+import { bus } from '../main';
+
 export default{
     props: {
-        title: {
-            type: 'String'
+        title:{
+            type: String,
         }
     },
     data(){
         return {}
     },
     methods: {
-        changeTitle: function(){
-            this.$emit('changeTitle','Vue Wizards');
+        changeTitle: function() {
+            const newTitle ='Wizard VUE!';
+           this.title = newTitle;
+           bus.$emit('newTitle', newTitle)            
         }
     }
-}
+ }
 
 
 </script>
