@@ -11,20 +11,13 @@
 </head>
 
 <body>
-    <div id="vue-app-one">
-        <h3 v-if="trigger">{{ name }}</h3>
-        <h3 v-else>{{ name1 }}</h3>
-        <comp1></comp1>
+    <div id="vue-app">
+        <h2>Refs</h2>
+        <input type="text" ref="myInput">
+        <button v-on:click="readRefs">Submit</button>
+        <p>your favorite food: {{ output }}</p>
+        <div ref="test">Hello</div>
     </div>
-    
-    <div id="vue-app-two">
-        <h3>{{ name }}</h3>
-        <button v-on:click="toggleTrigger">Change first name</button>
-        
-        <comp1></comp1>
-    </div>
- 
-
     <script src="newApp.js"></script>
 </body>
 
