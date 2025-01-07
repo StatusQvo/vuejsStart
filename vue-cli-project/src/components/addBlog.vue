@@ -1,16 +1,33 @@
 <template>
     <div id="add-blog">
         <h2>Add a new BLOG post</h2>
-        <form>
+        <form v-if="!posted">
             <label>Blog Title</label>
-            <input type="text" v-model.lazy="blog.title" required>
+            <input type="text" v-model="blog.title" required v-on:input="numberVModel">
             <label>Blog Content:</label>
-            <textarea v-model.lazy="blog.content"></textarea>
+            <textarea v-model="blog.content" ></textarea>
             <div id="checkboxes">
                 <label>First Pupil</label>
-                <input type="checkbox" value="first pupil" v-model="blog.categories">
+                <input type="checkbox" value="first pupil" v-model="blog.categories" v-on:change="checkboxChange($event)" ref="box1">
+                <label>Teacher</label>
+                <input type="checkbox" value="Teacher" v-model="blog.categories">
+                <label>Teacher assistant</label>
+                <input type="checkbox" value="Teacher assistant" v-model="blog.categories">
             </div>
+            <label>Author</label>
+            <select v-model="blog.author">
+                <option></option>
+                <option v-for="author in authors">{{ author }}</option>
+            </select>
+
+            <button v-on:click.prevent="post">Add Blog</button>
+
         </form>
+        
+        <div id="successMSG" v-if="posted">
+            <h2>Cograts, You've added a new blog! Huraaay!!!</h2>
+        </div>
+
         <div id="preview">
             <h3>Preview Blog</h3>
             <p>Blog title: {{ blog.title }}</p>
@@ -20,6 +37,8 @@
             <ul>
                 <li v-for="category in blog.categories">{{ category }}</li>
             </ul>
+            <p>Blog Author:</p>
+            <p >{{ blog.author }}</p>
         </div>
     </div>
 </template>
@@ -32,8 +51,35 @@ export default {
             blog: {
                     title: '',
                     content: '',
-                    categories: []
-            }
+                    categories: [],
+                    special: '',
+                    author: '',
+            },
+            authors:['King', 'Bredberry', 'Server'],
+            posted: false,
+        }
+    },
+    methods: {
+        numberVModel() {
+            this.blog.special = this.blog.title;
+            console.log(typeof this.blog.special);
+        },
+        checkboxChange(event){
+            const firstCheckbox = this.$refs.box1.checked; // Access the first checkbox using `ref`
+            console.log(firstCheckbox); // Logs whether the checkbox is checked
+        },
+        post: function(){
+            this.$http.post("https://jsonplaceholder.typicode.com/posts", {
+                title:this.blog.title,
+                body:this.blog.content,
+                userId: this.blog.categories,
+                id: this.blog.author
+            }).then(function(data){
+                console.log(data);
+                if (data.ok){
+                    this.posted = Boolean(true);
+                }
+            })
         }
     }
 }
