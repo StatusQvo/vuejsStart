@@ -3,9 +3,9 @@
         <h2>Add a new BLOG post</h2>
         <form v-if="!posted">
             <label>Blog Title</label>
-            <input type="text" v-model="blog.title" required v-on:input="numberVModel">
+            <input type="text" v-model.lazy="blog.title" required>
             <label>Blog Content:</label>
-            <textarea v-model="blog.content" ></textarea>
+            <textarea v-model.lazy="blog.content" ></textarea>
             <div id="checkboxes">
                 <label>First Pupil</label>
                 <input type="checkbox" value="first pupil" v-model="blog.categories" v-on:change="checkboxChange($event)" ref="box1">
@@ -31,8 +31,7 @@
         <div id="preview">
             <h3>Preview Blog</h3>
             <p>Blog title: {{ blog.title }}</p>
-            <p>Blog content:</p>
-            <p> {{ blog.content }} </p>
+            <p>Blog content: {{ blog.content }}</p>
             <p>Blog categories:</p>
             <ul>
                 <li v-for="category in blog.categories">{{ category }}</li>
@@ -87,7 +86,7 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
 #add-blog *{
     box-sizing: border-box;
 }
